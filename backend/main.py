@@ -16,6 +16,7 @@ from app.api import (
     metadata,
     portal,
     rules,
+    svcs,
     tags,
 )
 from app.core.error_codes import E_FORBIDDEN, E_TOKEN_INVALID
@@ -50,6 +51,7 @@ app.include_router(announcements.router)
 app.include_router(metadata.router)
 app.include_router(knowledge.router)
 app.include_router(rules.router)
+app.include_router(svcs.router)
 
 
 @app.get("/", tags=["system"])

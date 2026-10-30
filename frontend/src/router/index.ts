@@ -27,6 +27,7 @@ const routes: RouteRecordRaw[] = [
       { path: 'categories', name: 'categories', component: () => import('@/views/CategoryView.vue') },
       { path: 'knowledge', name: 'knowledge', component: () => import('@/views/KnowledgeView.vue') },
       { path: 'rules', name: 'rules', component: () => import('@/views/RuleView.vue') },
+      { path: 'services', name: 'services', component: () => import('@/views/ServiceMarketView.vue') },
       { path: 'entries', name: 'entries', component: () => import('@/views/EntryListView.vue') },
       { path: 'entries/new', name: 'entry-new', component: () => import('@/views/EntryEditView.vue') },
       { path: 'entries/:id/edit', name: 'entry-edit', component: () => import('@/views/EntryEditView.vue') },
