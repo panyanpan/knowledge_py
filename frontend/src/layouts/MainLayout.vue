@@ -23,6 +23,10 @@
           <el-icon><Goods /></el-icon>
           <span>服务市场</span>
         </el-menu-item>
+        <el-menu-item index="/traces">
+          <el-icon><Guide /></el-icon>
+          <span>知识溯源</span>
+        </el-menu-item>
         <el-menu-item index="/entries">
           <el-icon><Document /></el-icon>
           <span>知识条目</span>
@@ -69,7 +73,7 @@
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import { HomeFilled, FolderOpened, Document, ArrowDown, Bell, Monitor, Grid, Notebook, SetUp, Goods } from '@element-plus/icons-vue'
+import { HomeFilled, FolderOpened, Document, ArrowDown, Bell, Monitor, Grid, Notebook, SetUp, Goods, Guide } from '@element-plus/icons-vue'
 import { useUserStore } from '@/stores/user'
 import { logoutApi } from '@/api/authApi'
 
