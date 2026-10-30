@@ -1,0 +1,123 @@
+# ============================================================
+# 知识库管理系统 (.gitignore)
+# 技术栈：Vue 3 + TypeScript + Vite / FastAPI + SQLAlchemy / MySQL 8.0
+# 原则：只忽略「可再生」「含密钥」「本机专属」三类文件
+# ============================================================
+
+# ---------- 1. 密钥与本地配置（最高优先级，必须忽略）----------
+# 真实数据库口令与 JWT 密钥；模板 backend/.env.example 必须入库
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# 根目录下接口联调/冒烟测试产生的令牌与响应抓包文件（含明文 JWT）
+/access.txt
+/login.json
+/admin_login.json
+/auth_tmp.json
+/refresh.txt
+/old_refresh.txt
+/refresh_out.json
+
+# ---------- 2. Python / FastAPI 后端 ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 虚拟环境（backend/venv 由 pip install -r requirements.txt 重建）
+venv/
+.venv/
+env/
+ENV/
+.python-version
+
+# 打包与测试产物
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+sdist/
+wheels/
+*.egg-info/
+*.egg
+pip-wheel-metadata/
+
+# 测试与类型检查缓存
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# 运行时上传目录（attachments.py 上传时自动 mkdir，无需占位文件）
+backend/uploads/
+
+# 日志
+*.log
+logs/
+
+# ---------- 3. Node / Vue 3 / Vite 前端 ----------
+node_modules/
+frontend/dist/
+frontend/dist-ssr/
+.vite/
+*.local
+
+# npm / yarn / pnpm 日志与缓存
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.yarn/
+.pnpm-store/
+
+# TypeScript 增量编译信息（build 自动重建）
+*.tsbuildinfo
+
+# Vue 自动生成的类型声明（如需固定请删除本行）
+# frontend/src/*.d.ts
+
+# ---------- 4. 构建产物与静态资源编译缓存 ----------
+.eslintcache
+.stylelintcache
+*.tgz
+
+# ---------- 5. 操作系统 ----------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ---------- 6. 编辑器 / IDE ----------
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+*~
+
+# ---------- 7. 本机 AI 协作工具数据（不含源码，不需要共享）----------
+.workbuddy/
