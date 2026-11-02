@@ -65,10 +65,11 @@ def main() -> int:
     d = r.get("data") or {}
     check("options", st == 200 and "API" in d.get("svc_types", []) and len(d.get("statuses", [])) == 2)
 
-    # 2. stats
+    # 2. stats（month_new 依赖运行日期，只校验为非负整数）
     st, r = call("GET", "/api/v1/services/stats", admin)
     d = r.get("data") or {}
-    check("统计", st == 200 and d.get("total", 0) >= 6 and d.get("online", 0) >= 6 and d.get("month_new", 0) >= 2,
+    check("统计", st == 200 and d.get("total", 0) >= 6 and d.get("online", 0) >= 6
+          and isinstance(d.get("month_new"), int) and d["month_new"] >= 0,
           f"total={d.get('total')} online={d.get('online')} month_new={d.get('month_new')}")
 
     # 3. 列表
