@@ -87,7 +87,7 @@ npm run dev
 
 ## 初始账号
 
-- 用户名 `admin`，密码 `Admin@2026`（bcrypt 存储，首次登录后请修改）
+- 用户名 `admin` （bcrypt 存储，首次登录后请修改）
 - 角色种子：1=ADMIN、2=USER
 
 ## 数据库环境
